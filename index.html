@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MVC ToDo</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <script type="text/html" id="main-wrapper">
+        <div class="wrapper">
+            <div class="controlls">
+                <div class="group">
+                    <input type="text" class="input" placeholder="Write notice" maxlength="30">
+                    <span class="bar"></span>
+                </div>
+                <button class="add btn black" type="button">
+                    <span>Add notice</span>
+                </button>
+				<p class="tip">Create new notice and tap ENTER or "Add noice" button</p>
+            </div>
+            <div class="ul-list">
+            <ul class="list"></ul>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/html" id="item-list">
+        <% for (var i = 0; i < data.length; i++) { %>
+            <li class="rewrite" data-index="<%= i %>" data-value="<%= data[i] %>">
+                <%= data[i] %> <span data-value="<%= data[i] %>" class="delete"></span></li>
+            <% }; %>
+    </script>
+
+    <script type="text/html" id="edit-item">
+        <input type="text" class="edit" required autofocus maxlength="30">
+        <span class="ok" data-index="<%= data[0] %>"></span>
+    </script>
+
+    <script data-main="js/main" src="js/require.js"></script>
+</body>
+
+</html>
